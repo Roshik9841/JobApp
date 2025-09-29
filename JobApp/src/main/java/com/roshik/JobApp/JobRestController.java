@@ -6,10 +6,7 @@ import com.roshik.JobApp.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,9 +16,16 @@ public class JobRestController {
     private JobService service;
 
     @GetMapping("jobPosts")
-    @ResponseBody
+    @ResponseBody         //for REST
+    @CrossOrigin(origins = "http://localhost:3000")   //yo rakhyo bhane react le access garna milxa
     public List<JobPost> getAllJobs(){
         return service.getAllJobs();
+    }
+
+    @GetMapping("jobPost/{postId}")
+    @ResponseBody
+    public JobPost getJob(@PathVariable("postId") int postId){
+        return service.getJob(postId);
     }
 }
 
