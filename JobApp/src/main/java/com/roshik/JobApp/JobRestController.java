@@ -23,9 +23,14 @@ public class JobRestController {
     }
 
     @GetMapping("jobPost/{postId}")
-    @ResponseBody
-    public JobPost getJob(@PathVariable("postId") int postId){
+    @ResponseBody     //when you want to return data
+    public JobPost getJob(@PathVariable("postId") int postId){  //PathVariable le chahi kun variable bata access garni bhaenra
         return service.getJob(postId);
+    }
+
+    @PostMapping("jobPost")
+    public void addJob(@RequestBody JobPost jobPost){      //when you want to send data using requestBody
+        service.addJob(jobPost);
     }
 }
 
