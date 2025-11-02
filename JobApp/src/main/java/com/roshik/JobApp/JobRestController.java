@@ -26,6 +26,11 @@ public class JobRestController {
     public JobPost getJob(@PathVariable("postId") int postId){  //PathVariable le chahi kun variable bata access garni bhaenra
         return service.getJob(postId);
     }
+    @GetMapping("jobPosts/keyword/{keyword}")
+    @ResponseBody
+    public List<JobPost> searchByKeyword(@PathVariable("keyword") String keyword){
+        return service.search(keyword);
+    }
 
     @PostMapping("jobPost")
     public JobPost addJob(@RequestBody JobPost jobPost){      //when you want to send data using requestBody

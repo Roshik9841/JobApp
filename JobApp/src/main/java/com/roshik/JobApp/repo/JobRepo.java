@@ -8,7 +8,7 @@ import java.util.*;
 @Repository
 public interface JobRepo extends JpaRepository<JobPost,Integer> {        //CLASS ra primaryKey
 
-
+    List<JobPost> findByPostProfileContainingOrPostDesc(String postProfile, String postDesc);
 }
 
 
