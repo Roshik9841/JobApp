@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data  //getter setter haru garirakhnu pardiana kesaiko lagi
+@NoArgsConstructor    //constructor banaidinxa class ko tara kunai parameter hudaina
+@AllArgsConstructor   //consturctor banaidinxa tara sabai field hunxa yesma chahi
 @Component
 public class JobPost {
+
     private int postId;
     private String postProfile;
     private String postDesc;
