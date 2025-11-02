@@ -1,5 +1,7 @@
 package com.roshik.JobApp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +13,9 @@ import java.util.*;
 @NoArgsConstructor    //constructor banaidinxa class ko tara kunai parameter hudaina
 @AllArgsConstructor   //consturctor banaidinxa tara sabai field hunxa yesma chahi
 @Component
+@Entity
 public class JobPost {
-
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;
